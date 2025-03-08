@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Header</title>
+    <style>
+        body {
+            margin: 0; 
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #34495e;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            height: 80px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color:white;
+            font-weight: bold;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+
+        .nav a:hover {
+            color: #0056b3;
+        }
+
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 500px; 
+        }
+
+        .active {
+            display: block;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .dot-container {
+            text-align: center;
+            position: absolute;
+            bottom: 15px; 
+            width: 100%;
+            left: 0;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 10px; 
+            width: 10px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active-dot, .dot:hover {
+            background-color: #717171;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 20px;
+            padding: 10px;
+            padding-bottom: 100px;
+        }
+
+        .flex-box {
+            width: 200px; 
+            height: 200px; 
+            color: white;
+            padding: 20px;
+        }
+        #digi{
+            text-align: center;
+            color:white;
+            background-color: #1979a9;
+            padding:10px;
+            
+        }
+        #vitlib{
+            text-align: center;
+            color:white;
+            background-color: #1979a9;
+            padding:10px;
+
+        }
+        
+
+        .library-image {
+            float: left;
+            margin-left: 20px;
+            margin-right: 20px;
+            width: 200px; 
+            height: 200px;
+        }
+        .flex-box {
+            width: 200px;
+            height: 200px;
+            color: white;
+            padding: 30px;
+            display: block ;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8; 
+        }
+        .box{ 
+            background-image: url('https://content3.jdmagicbox.com/v2/comp/chennai/z2/044pxx44.xx44.191204190017.s3z2/catalogue/vit-university-library-chennai-2di8fvi7pw.jpg'); opacity: 0.4;
+                opacity: 1; 
+                position: relative; 
+                clear:left;
+            }
+            
+            .box::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5); 
+                z-index: 1;
+            }
+            
+            .box ul, .box li, .box h2 {
+                position: relative;
+                z-index: 2;
+                color: white; 
+        
+                
+            }
+
+       
+        #box2 { background-image: url('https://content3.jdmagicbox.com/v2/comp/chennai/z2/044pxx44.xx44.191204190017.s3z2/catalogue/vit-university-library-chennai-sm2wh261ca.jpg');  opacity: 1;}
+        #box3 { background-image: url('https://chennai.vit.ac.in/wp-content/uploads/2020/01/26-1.jpg');  opacity: 1; }
+        #box4 { background-image: url('https://content.jdmagicbox.com/v2/comp/chennai/z2/044pxx44.xx44.191204190017.s3z2/catalogue/vit-university-library-chennai-0h5oh5bfmi.jpg');  opacity: 1; }
+        #box5 { background-image: url('https://vit.ac.in/wp-content/uploads/2023/07/course-scaled.webp');  opacity: 1; }
+        .he{
+            color:#f8f9fa;
+            text-decoration: none;
+        }
+        .he:hover{
+            text-decoration: none;
+            font-size: x-large;
+        }
+        #col {
+            display: flex;
+            align-items: center; 
+            background-color:#1979a9; 
+            padding: 20px; 
+            padding-bottom: 20px;
+            
+        }
+
+        #ddd {
+            max-width: 100%;  
+            height: auto;      
+            margin-right: 30px; 
+        }
+
+        #kkk {
+            flex: 1;
+            text-align: center; 
+            font-size:25px;
+        }
+
+        .button {
+            background-color:white; 
+            border: none; 
+            color:#1979a9; 
+            padding: 15px 32px; 
+            text-align: center; 
+            text-decoration: none; 
+            display: inline-block;
+            font-size: 20px; 
+            margin: 4px 2px; 
+            cursor: pointer; 
+            transition: background-color 0.3s ease; 
+        }
+
+        .button:hover {
+            background-color: #1979a9;
+            color:white; 
+        }
+        #library-timings {
+            padding: 20px;
+            background-color: #f0f0f0;
+            margin: 20px;
+            border-radius: 5px;
+        }
+        
+        #library-timings h2 {
+            color: #1979a9;
+        }
+        
+        #library-timings p {
+            color: #333;
+            font-size: 16px;
+        }
+        .library-resources {
+            text-align: center;
+            padding: 30px 20px;
+            background-color:white;
+            color: white;
+        }
+        
+        .library-resources h2 {
+            font-size: 28px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .underline {
+            width: 80px;
+            height: 3px;
+            background-color:navy;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        
+        .grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .item {
+            flex: 1;
+            min-width: 150px;
+            padding: 20px;
+            background-color: #1979a9;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        
+        .number {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        #hello{
+            color:#1979a9;
+        }
+        .footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: auto;
+            font-size: 16px;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+        
+        .footer h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            opacity: 0.7;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+        
+        
+        
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://chennai.vit.ac.in/files/icbcc2022/images/about/vitcc.png" alt="Logo" class="logo">
+        <nav class="nav">
+            <a href="#home">Home</a>
+            <a href="flip.html">About Us</a>
+            <a href="#resources">Resources</a>
+            <a href="#services">Services</a>
+        </nav>
+    </header>
+    <main>
+        <div class="slideshow-container">
+            <div class="slide active">
+                <img src="https://chennai.vit.ac.in/wp-content/uploads/2020/01/26-1.jpg" alt="Image 1">
+            </div>
+            <div class="slide">
+                <img src="https://chennai.vit.ac.in/wp-content/uploads/2020/04/Library.jpg" alt="Image 2">
+            </div>
+            <div class="slide">
+                <img src="https://vitchennai.wordpress.com/wp-content/uploads/2013/09/vit_chennai_library.jpg" alt="Image 3">
+            </div>
+            <div class="slide">
+                <img src="https://images.shiksha.com/mediadata/images/1541145104phpunPXTB.png" alt="Image 4">
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span> 
+            </div>
+        </div>
+        <div id="library-timings">
+            <h2>Library Timings</h2>
+            <h3 id="timings"></h3>
+        </div>
+        
+        
+        <h1 id="vitlib">VIT Library</h1>
+        <img src="https://chennai.vit.ac.in/wp-content/uploads/2020/06/Central-library-1.jpg" alt="Central Library" class="library-image">
+        <p id="content">The Central library has been established with state-of-art infrastructure to the International Standards, spreads over to four floors with built-in area of 2322.58 sq.m. It has provided with centrally air-conditioning system, well-protected with fire alarm, CCTV, and Flap Barrier. Reference and Textbooks of national and international authors, International and National Journals & Non-Book materials are available to cater various fields of Basic Sciences, Engineering and Technology, Law, Fashion Technology, Humanities and Social Sciences. VIT Chennai Library has a Digital library, Video Conferencing facility. Central Library is using Koha software for Library automation and has implemented RFID technology with self-issue and return kiosk, WEB-OPAC (Online Public Access Catalogue), and online renewal facility.</p>
+        <p id="con">The VIT Library is your gateway to a vast collection of academic resources, research materials, and digital content designed to support your learning and research journey. Whether you're a student, professor, or research scholar, our library offers a wealth of knowledge at your fingertips.
+<br><br>
+            Explore our online catalog, access e-books, journals, and databases, or reach out to our librarians for assistance. We are committed to providing a seamless and enriching learning experience for the VIT community.</p>
+        
+        <div id="lib">
+        <h1 id="digi">DigiLibrary</h1>
+        <div class="flex-container">
+            <div class="flex-box box" id="box1">
+                <H2>GUIDELINES</H2>
+                <ul>
+                    <li><a href="borrow.html" class="he">How to borrow books?</a></li><br>
+                    <li><a href="borrow.html" class="he">How to return books?</a></li><br>
+                    <li><a href="dosdonts.html" class="he">Do's and Don'ts in the library</a></li><br>
+                </ul>
+            </div>
+            <div class="flex-box box" id="box2">
+                <h2>EVENTS</h2>
+                <ul>
+                    <li><a href="events.html" class="he">List of upcoming events happening in the library</a></li>
+                </ul>
+            </div>
+            <div class="flex-box box" id="box3">
+                <h2>HELP DESK</h2>
+                <li><a href="query.html" class="he">Query Page</a></li><br>
+                    <li><a href="faq.html" class="he">FAQS</a></li><br>
+            </div>
+            <div class="flex-box box" id="box4">
+                <h2>SERVICES</h2>
+                <li><a href="in.html" class="he">WebOPAC</a></li><br>
+                <li><a href="in.html" class="he">Request books</a></li><br>
+                <li><a href="donating.html" class="he">Donate books</a></li><br>
+            </div>
+            <div class="flex-box box" id="box5">
+                <h2>GOALS</h2>
+                <li><a href="vission.html" class="he">Visions and Missions</a></li><br>
+            </div>
+        </div>
+        </div>
+        <div id="col">
+            <img id="ddd" src="https://edujam.in/wp-content/uploads/2024/12/111141332-768x432.png" alt="cimage">
+            <div id="kkk">
+                <h2>Achievements and Honors</h2>
+               <a href="achivements.html"> <button class="button">Achievements</button></a>
+            </div>
+        </div>
+
+        <div class="library-resources">
+            <h2 id="hello">VITC Library Resources</h2>
+            <div class="underline"></div>
+            
+            <div class="grid">
+                <div class="item">
+                    <div class="icon">📚</div>
+                    <div class="number">64,074</div>
+                    <div>Number of Books</div>
+                </div>
+                <div class="item">
+                    <div class="icon">📖</div>
+                    <div class="number">2,439</div>
+                    <div>Number of Back Volumes</div>
+                </div>
+                <div class="item">
+                    <div class="icon">📰</div>
+                    <div class="number">266</div>
+                    <div>Print Journals</div>
+                </div>
+                <div class="item">
+                    <div class="icon">💻</div>
+                    <div class="number">15,735+</div>
+                    <div>Online Databases/E-Journals</div>
+                </div>
+                <div class="item">
+                    <div class="icon">📲</div>
+                    <div class="number">17,393</div>
+                    <div>E-Books</div>
+                </div>
+                <div class="item">
+                    <div class="icon">💿</div>
+                    <div class="number">4,303</div>
+                    <div>CD / DVD</div>
+                </div>
+                <div class="item">
+                    <div class="icon">📰</div>
+                    <div class="number">60</div>
+                    <div>Total Number of Magazines</div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <h2>CONTACT</h2>
+                <div class="contact-item">
+                     admin.chennai@vit.ac.in
+                </div>
+                <div class="contact-item">
+                     +91 44 3993 1555
+                </div>
+                <div class="contact-item">
+                    Vellore Institute of Technology University, <br>
+                    Vandalur Kelambakkam Road, <br>
+                    Keelakotaiyur, <br>
+                    Chennai, Tamil Nadu – 600 127
+                </div>
+            </div>
+        </footer>
+        
+        
+    </main>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active-dot";
+            setTimeout(showSlides, 2000); 
+        }
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+    
+       
+        
+            function updateLibraryTimings() {
+                var today = new Date();
+                var day = today.getDay(); 
+        
+                var timings = (day === 0 || day === 6) ? "6 AM - 10 PM" : "7 AM - 7 PM";
+                document.getElementById("timings").textContent = "Today's Library Timings: " + timings;
+            }
+            
+            updateLibraryTimings();
+        
+            
+        
+       
+        
+    </script>
+</body>
+</html>

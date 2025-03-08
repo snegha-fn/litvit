@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Your Query</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: url('https://cdn.cosmos.so/2f097fb7-eb45-4402-bfb9-3daa26594756?format=jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header1 {
+            width: 100%;
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .container {
+            width: 40%;
+            background: rgba(255, 255, 255, 0.833);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            
+            margin-top: 150px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: white;
+            color: white;
+        }
+
+        select {
+            background-color: white;
+            color: black;
+        }
+
+        button {
+            background: #34495e;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #6dd1b1;
+        }
+
+        #response {
+            color: green;
+            display: none;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header1">Help Desk</div>
+    <div class="container">
+        <h2>Ask Your Query</h2>
+        <form id="askForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="regNumber" placeholder="Register Number" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <select id="status" required>
+                <option value="">Select Status</option>
+                <option value="Student">Student</option>
+                <option value="Professor">Professor</option>
+                <option value="Research Scholar">Research Scholar</option>
+            </select>
+            <input type="text" id="phone" placeholder="Your Phone Number" required>
+            <textarea id="message" placeholder="Your Query" rows="5" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="response">Your query has been submitted!</p>
+    </div>
+
+    <script>
+        document.getElementById('askForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById('name').value;
+            let regNumber = document.getElementById('regNumber').value;
+            let email = document.getElementById('email').value;
+            let status = document.getElementById('status').value;
+            let phone = document.getElementById('phone').value;
+            let message = document.getElementById('message').value;
+            
+            if (name && regNumber && email && status && phone && message) {
+                document.getElementById('response').style.display = 'block';
+                document.getElementById('askForm').reset();
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+    </script>
+</body>
+</html>

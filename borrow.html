@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Borrowing Process</title>
+    <style>
+        /* Fixed Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        /* Navigation Bar */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+        }
+
+        /* Library Guidelines - Moved Inside Header */
+        .header1 {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #afa4a434;
+            margin: 0;
+            padding-top: 100px; /* Prevent content from hiding behind fixed header */
+            background-image: url('https://www.culibrary.ac.in/assets/images/bnr/banner-2.jpg');
+            backdrop-filter: blur(5px);
+        }
+
+        .container {
+            width: 70%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding-top: 0px;
+        }
+
+        h2 {
+            color: navy;
+        }
+
+        ol {
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .process {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #e6f7ff;
+            border-left: 5px solid navy;
+        }
+
+        .return {
+            background-color: #ffe6e6;
+            border-left: 5px solid red;
+        }
+        #hh{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body> 
+    <div class="header">
+        <nav class="nav">
+            <a href="mainpage.html">Home</a>
+            <a href="flip.htm">About Us</a>
+            <a href="#resources">Resources</a>
+            <a href="#services">Services</a>
+        </nav>
+        <div class="header1">Library Guidelines</div>
+    </div>
+    <div id="hh"></div>
+
+    <div class="container">
+        <h2>📚 VIT Chennai Library Borrowing & Returning Process</h2>
+        
+        <div class="process">
+            <h3>Borrowing a Book</h3>
+            <ol>
+                <li>Go to the library and ask the librarian for the book you want to borrow.</li>
+                <li>Receive the book and scan it using the self-issuing kiosk.</li>
+                <li>Enter your student credentials to complete the borrowing process.</li>
+                <li>The book will be registered under your name in the library database.</li>
+                <li>You will receive an email confirmation specifying the return date.</li>
+            </ol>
+        </div>
+        
+        <div class="process return">
+            <h3>Returning a Book</h3>
+            <ol>
+                <li>Drop the book in the return book slot.</li>
+                <li>The system will scan the book to verify its return status.</li>
+                <li>The system will check if the book was returned on time.</li>
+                <li>Return confirmation will be updated in the database.</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
